@@ -1,7 +1,11 @@
 import com.faangx.ktp.basics.OddEvenCheckerMiniApp
 
 fun checkEvenOdd(num: Int): String {
-    TODO()
+    return if (num % 2 == 0) {
+        "Even"
+    } else {
+        "Odd"
+    }
 }
 
 fun main() {
