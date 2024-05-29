@@ -4,7 +4,7 @@ files:
     visible: true
     placeholders:
       - offset: 0
-        length: 1548
+        length: 1547
         placeholder_text: TODO()
         initial_state:
           length: 6
@@ -15,7 +15,7 @@ files:
         status: Failed
         is_visible: false
       - offset: 0
-        length: 1548
+        length: 1547
         placeholder_text: TODO()
         initial_state:
           length: 6
@@ -26,7 +26,7 @@ files:
         status: Failed
         is_visible: false
       - offset: 0
-        length: 1548
+        length: 1547
         placeholder_text: TODO()
         initial_state:
           length: 6
@@ -37,7 +37,7 @@ files:
         status: Failed
         is_visible: false
       - offset: 0
-        length: 1548
+        length: 1547
         placeholder_text: TODO()
         initial_state:
           length: 6

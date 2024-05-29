@@ -15,7 +15,7 @@ fun printBinomialExpansion(n: Int) {
         return permutationsOf(n, r) / factorialOf(r)
     }
 
-    // Binomial expansion
+    // Binomial expansio
     val result = StringBuilder()
     for (k in 0..n) {
         val coefficient = combinationsOf(n, k)
