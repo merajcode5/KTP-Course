@@ -1,68 +1,47 @@
 import com.faangx.ktp.ext.BinomialExpansionMiniApp
 
 fun printBinomialExpansion(n: Int) {
+    repeat(n + 1) { i ->
+        val coefficient = combinationsOf(n, i)
+        val PowA = n - i
+        val PowB = i
 
-    fun factorialOf(x: Int): Int {
-        return if (x <= 1) 1 else x * factorialOf(x - 1)
-    }
-    // nPr
-    fun permutationsOf(n: Int, r: Int): Int {
-        return factorialOf(n) / factorialOf(n - r)
-    }
+        if (coefficient > 1) print("$coefficient")
 
-    // nCr
-    fun combinationsOf(n: Int, r: Int): Int {
-        return permutationsOf(n, r) / factorialOf(r)
-    }
-
-    // Binomial expansio
-    val result = StringBuilder()
-    for (k in 0..n) {
-        val coefficient = combinationsOf(n, k)
-        val aExponent = n - k
-        val bExponent = k
-
-        if (coefficient != 1) {
-            result.append("$coefficient")
+        if (PowA > 0) {
+            print("a")
+            if (PowA > 1) print("^$PowA")
         }
-
-        if (aExponent > 0) {
-            result.append("a")
-            if (aExponent > 1) {
-                result.append("^$aExponent")
-            }
+        if (PowB > 0) {
+            print("b")
+            if (PowB > 1) print("^$PowB")
         }
-
-        if (bExponent > 0) {
-            if (aExponent > 0) {
-                result.append(" * ")
-            }
-            result.append("b")
-            if (bExponent > 1) {
-                result.append("^$bExponent")
-            }
-        }
-
-        if (k < n) {
-            result.append(" + ")
-        }
+        if (i < n) print(" + ")
     }
-
-    println(result.toString())
 }
-
+    //BINOMIAL EXPANSION
 fun factorialOf(x: Int): Int {
-    return if (x <= 1) 1 else x * factorialOf(x - 1)
+    var fact = 1
+    for (i in 1..x) {
+        fact *= i
+    }
+    return fact
 }
-
+    //       nPr
 fun permutationsOf(n: Int, r: Int): Int {
-    return factorialOf(n) / factorialOf(n - r)
+    var permutation = 1
+    for (i in (n - r + 1)..n) {
+        permutation *= i
+    }
+    return permutation
 }
-
+    //       nCr
 fun combinationsOf(n: Int, r: Int): Int {
     return permutationsOf(n, r) / factorialOf(r)
 }
 
 fun main() {
-    BinomialExpansionMiniApp(::printBinomialExpansion)
+    printBinomialExpansion(1) // Change this value for different n
 }
+
+
